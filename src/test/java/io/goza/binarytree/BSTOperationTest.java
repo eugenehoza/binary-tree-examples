@@ -9,13 +9,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class BSTOperationTest {
 
-    class IntBST extends BST<Integer> {
+    static class IntBST extends BST<Integer> {
     }
 
     @Test
     void whenInsertOneValue_thenBTSIsCreated() {
         var result = new IntBST();
-        var expected = new BSTNode<Integer>(5, null, null);
+        var expected = new BSTNode<>(5, null, null);
 
         result.insert(5);
 
@@ -70,7 +70,7 @@ public class BSTOperationTest {
 
     @Test
     void whenSearchByNotExisting_thenNotFound() {
-        var tree = fromCommaSeparated("5,4,7,3,9,0,2,6");
+        var tree = fromCommaSeparated("5,4,7,3,9,0,2,6,10");
 
         var result = tree.search(8);
 
