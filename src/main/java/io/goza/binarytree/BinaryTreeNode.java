@@ -2,23 +2,23 @@ package io.goza.binarytree;
 
 import java.util.Objects;
 
-class BSTNode<T extends Comparable> implements Comparable<T> {
+class BinaryTreeNode<T extends Comparable> implements Comparable<T> {
 
     private T value;
-    private BSTNode left;
-    private BSTNode right;
+    private BinaryTreeNode left;
+    private BinaryTreeNode right;
 
-    public BSTNode(T value, BSTNode left, BSTNode right) {
+    public BinaryTreeNode(T value, BinaryTreeNode left, BinaryTreeNode right) {
         this.value = value;
         this.left = left;
         this.right = right;
     }
 
-    public BSTNode(T value) {
+    public BinaryTreeNode(T value) {
         this.value = value;
     }
 
-    public BSTNode<T> searchNode(T value) {
+    public BinaryTreeNode<T> searchNode(T value) {
         return switch (this.compareTo(value)) {
             case 1, 0 -> this.left;
             case -1 -> this.right;
@@ -30,19 +30,19 @@ class BSTNode<T extends Comparable> implements Comparable<T> {
         return value;
     }
 
-    public BSTNode<T> getLeft() {
+    public BinaryTreeNode<T> getLeft() {
         return left;
     }
 
-    public void setLeft(BSTNode<T> left) {
+    public void setLeft(BinaryTreeNode<T> left) {
         this.left = left;
     }
 
-    public BSTNode<T> getRight() {
+    public BinaryTreeNode<T> getRight() {
         return right;
     }
 
-    public void setRight(BSTNode<T> right) {
+    public void setRight(BinaryTreeNode<T> right) {
         this.right = right;
     }
 
@@ -57,8 +57,8 @@ class BSTNode<T extends Comparable> implements Comparable<T> {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof BSTNode)) return false;
-        BSTNode<?> bstNode = (BSTNode<?>) o;
+        if (!(o instanceof BinaryTreeNode)) return false;
+        BinaryTreeNode<?> bstNode = (BinaryTreeNode<?>) o;
         return Objects.equals(value, bstNode.value) && Objects.equals(left, bstNode.left) && Objects.equals(right, bstNode.right);
     }
 
